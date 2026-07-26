@@ -1,11 +1,10 @@
 package com.iptv.player4k.data.repository
 
-import com.iptv.player4k.data.models.Playlist
+import com.iptv.player4k.data.local.entity.PlaylistEntity
+import kotlinx.coroutines.flow.Flow
 
 interface PlaylistRepository {
-    suspend fun getAllPlaylists(): List<Playlist>
-    suspend fun getPlaylistById(id: Long): Playlist?
-    suspend fun insertPlaylist(playlist: Playlist)
+    fun observePlaylists(): Flow<List<PlaylistEntity>>
+    suspend fun insertPlaylist(name: String, url: String): Long
     suspend fun deletePlaylist(id: Long)
-    suspend fun updatePlaylist(playlist: Playlist)
 }

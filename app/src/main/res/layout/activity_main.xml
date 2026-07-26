@@ -1,513 +1,54 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_main"
     android:orientation="vertical"
-    android:padding="@dimen/spacing_lg">
+    android:padding="16dp">
 
-    <!-- Header Section -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:layout_marginBottom="@dimen/spacing_xl">
-
-        <!-- Logo and Title -->
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical">
-
-            <ImageView
-                android:id="@+id/ivLogo"
-                android:layout_width="@dimen/tv_item_width"
-                android:layout_height="@dimen/tv_item_width"
-                android:contentDescription="@string/app_name"
-                android:src="@drawable/ic_logo" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="LEBANON"
-                android:textColor="@color/text_primary_color"
-                android:textSize="@dimen/tv_text_xl"
-                android:textStyle="bold"
-                android:layout_marginTop="@dimen/spacing_md" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4K IPTV"
-                android:textColor="@color/accent_color"
-                android:textSize="@dimen/tv_text_xl"
-                android:textStyle="bold" />
-        </LinearLayout>
-
-        <!-- Connection Status Card -->
-        <FrameLayout
-            android:layout_width="@dimen/tv_item_width"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/spacing_lg"
-            android:background="@drawable/bg_card_border"
-            android:padding="@dimen/spacing_md">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:gravity="center_horizontal">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="@dimen/spacing_md">
-
-                    <ImageView
-                        android:id="@+id/ivConnectionIndicator"
-                        android:layout_width="12dp"
-                        android:layout_height="12dp"
-                        android:background="@drawable/shape_connected_indicator"
-                        android:layout_marginEnd="@dimen/spacing_sm"
-                        android:contentDescription="@string/status_success" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/action_ok"
-                        android:textColor="@color/status_success"
-                        android:textSize="@dimen/tv_text_sm"
-                        android:textStyle="bold" />
-                </LinearLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Server :"
-                    android:textColor="@color/text_secondary_color"
-                    android:textSize="@dimen/tv_text_sm"
-                    android:layout_marginBottom="@dimen/spacing_xs" />
-
-                <TextView
-                    android:id="@+id/tvServerName"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="maripor.com"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/tv_text_md"
-                    android:layout_marginBottom="@dimen/spacing_md" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Expire :"
-                    android:textColor="@color/text_secondary_color"
-                    android:textSize="@dimen/tv_text_sm"
-                    android:layout_marginBottom="@dimen/spacing_xs" />
-
-                <TextView
-                    android:id="@+id/tvExpiryDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="01-06-2026"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/tv_text_md" />
-            </LinearLayout>
-        </FrameLayout>
-    </LinearLayout>
-
-    <!-- Action Buttons Row -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginBottom="@dimen/spacing_xxl">
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnAddPlaylist"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/tv_button_height"
-            android:layout_weight="1"
-            android:layout_marginEnd="@dimen/spacing_md"
-            android:text="@string/action_add_playlist"
-            android:textColor="@color/text_primary_color"
-            android:textSize="@dimen/tv_text_md"
-            android:background="@drawable/bg_button_border"
-            android:drawableStart="@drawable/ic_add"
-            android:drawablePadding="@dimen/spacing_md" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Add Playlist" />
 
         <Button
-            android:id="@+id/btnChangeServer"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/tv_button_height"
-            android:layout_weight="1"
-            android:layout_marginEnd="@dimen/spacing_md"
-            android:text="@string/action_import_playlist"
-            android:textColor="@color/text_primary_color"
-            android:textSize="@dimen/tv_text_md"
-            android:background="@drawable/bg_button_border"
-            android:drawableStart="@drawable/ic_server"
-            android:drawablePadding="@dimen/spacing_md" />
+            android:id="@+id/btnFavorites"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Favorites" />
 
         <Button
             android:id="@+id/btnSettings"
-            android:layout_width="0dp"
-            android:layout_height="@dimen/tv_button_height"
-            android:layout_weight="1"
-            android:text="@string/menu_settings"
-            android:textColor="@color/text_primary_color"
-            android:textSize="@dimen/tv_text_md"
-            android:background="@drawable/bg_button_border"
-            android:drawableStart="@drawable/ic_settings"
-            android:drawablePadding="@dimen/spacing_md" />
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Settings" />
     </LinearLayout>
 
-    <!-- Content Cards Grid -->
-    <GridLayout
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvEmpty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No channels yet"
+        android:layout_marginTop="12dp" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerChannels"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:columnCount="4"
-        android:rowCount="1"
-        android:layout_marginBottom="@dimen/spacing_xxl">
-
-        <!-- Live TV Card -->
-        <FrameLayout
-            android:id="@+id/btnLiveTV"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_column="0"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_marginEnd="@dimen/spacing_md"
-            android:background="@drawable/bg_card_live_selected"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="@dimen/spacing_lg">
-
-                <ImageView
-                    android:layout_width="@dimen/tv_item_width"
-                    android:layout_height="@dimen/tv_item_width"
-                    android:src="@drawable/ic_live"
-                    android:contentDescription="@string/menu_channels"
-                    android:layout_marginBottom="@dimen/spacing_md"
-                    android:tint="@color/text_primary_color" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="LIVE TV"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/tv_text_lg"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <!-- Movies Card -->
-        <FrameLayout
-            android:id="@+id/btnMovies"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_column="1"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_marginEnd="@dimen/spacing_md"
-            android:background="@drawable/bg_card_border"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="@dimen/spacing_lg">
-
-                <ImageView
-                    android:layout_width="@dimen/tv_item_width"
-                    android:layout_height="@dimen/tv_item_width"
-                    android:src="@drawable/ic_movie"
-                    android:contentDescription="@string/menu_channels"
-                    android:layout_marginBottom="@dimen/spacing_md"
-                    android:tint="@color/text_primary_color" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="MOVIES"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/tv_text_lg"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <!-- TV Series Card -->
-        <FrameLayout
-            android:id="@+id/btnTVSeries"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_column="2"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:layout_marginEnd="@dimen/spacing_md"
-            android:background="@drawable/bg_card_border"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="@dimen/spacing_lg">
-
-                <ImageView
-                    android:layout_width="@dimen/tv_item_width"
-                    android:layout_height="@dimen/tv_item_width"
-                    android:src="@drawable/ic_series"
-                    android:contentDescription="@string/menu_channels"
-                    android:layout_marginBottom="@dimen/spacing_md"
-                    android:tint="@color/text_primary_color" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="TV SERIES"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/tv_text_lg"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </FrameLayout>
-
-        <!-- Catch Up Card -->
-        <FrameLayout
-            android:id="@+id/btnCatchUp"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_row="0"
-            android:layout_column="3"
-            android:layout_columnWeight="1"
-            android:layout_gravity="fill"
-            android:background="@drawable/bg_card_border"
-            android:foreground="?attr/selectableItemBackground">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical"
-                android:gravity="center"
-                android:padding="@dimen/spacing_lg">
-
-                <ImageView
-                    android:layout_width="@dimen/tv_item_width"
-                    android:layout_height="@dimen/tv_item_width"
-                    android:src="@drawable/ic_catchup"
-                    android:contentDescription="@string/menu_channels"
-                    android:layout_marginBottom="@dimen/spacing_md"
-                    android:tint="@color/text_primary_color" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="CATCH UP"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/tv_text_lg"
-                    android:textStyle="bold" />
-            </LinearLayout>
-        </FrameLayout>
-    </GridLayout>
-
-    <!-- Bottom Status Bar -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/bg_status_bar"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:padding="@dimen/spacing_md">
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_user"
-                android:tint="@color/status_success"
-                android:contentDescription="@string/app_name"
-                android:layout_marginEnd="@dimen/spacing_sm" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings_about"
-                    android:textColor="@color/status_success"
-                    android:textSize="@dimen/text_xs" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/app_name"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/text_sm" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_wifi"
-                android:tint="@color/status_success"
-                android:contentDescription="@string/app_name"
-                android:layout_marginEnd="@dimen/spacing_sm" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings_network"
-                    android:textColor="@color/status_success"
-                    android:textSize="@dimen/text_xs" />
-
-                <TextView
-                    android:id="@+id/tvConnectionStatus"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Connected"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/text_sm" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_server"
-                android:tint="@color/status_success"
-                android:contentDescription="@string/app_name"
-                android:layout_marginEnd="@dimen/spacing_sm" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/settings_playback"
-                    android:textColor="@color/status_success"
-                    android:textSize="@dimen/text_xs" />
-
-                <TextView
-                    android:id="@+id/tvServer"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="maripor.com"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/text_sm" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_calendar"
-                android:tint="@color/status_success"
-                android:contentDescription="@string/app_name"
-                android:layout_marginEnd="@dimen/spacing_sm" />
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Expire"
-                    android:textColor="@color/status_success"
-                    android:textSize="@dimen/text_xs" />
-
-                <TextView
-                    android:id="@+id/tvExpire"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="01-06-2026"
-                    android:textColor="@color/text_primary_color"
-                    android:textSize="@dimen/text_sm" />
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:gravity="center_vertical|end">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_clock"
-                android:tint="@color/text_primary_color"
-                android:contentDescription="@string/app_name"
-                android:layout_marginEnd="@dimen/spacing_sm" />
-
-            <TextView
-                android:id="@+id/tvTime"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="18:52"
-                android:textColor="@color/text_primary_color"
-                android:textSize="@dimen/text_lg"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </LinearLayout>
+        android:layout_marginTop="16dp" />
 </LinearLayout>

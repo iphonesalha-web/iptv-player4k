@@ -1,15 +1,11 @@
 package com.iptv.player4k.data.repository
 
-import com.iptv.player4k.data.models.Channel
+import com.iptv.player4k.data.local.entity.ChannelEntity
+import kotlinx.coroutines.flow.Flow
 
 interface ChannelRepository {
-    suspend fun getAllChannels(): List<Channel>
-    suspend fun getChannelsByGroup(group: String): List<Channel>
-    suspend fun getChannelsByPlaylist(playlistId: Long): List<Channel>
-    suspend fun getChannelById(id: Long): Channel?
-    suspend fun insertChannel(channel: Channel)
-    suspend fun deleteChannel(id: Long)
-    suspend fun updateChannel(channel: Channel)
-    suspend fun addChannelToFavorites(channelId: Long)
-    suspend fun removeChannelFromFavorites(channelId: Long)
+    fun observeChannels(): Flow<List<ChannelEntity>>
+    fun observeFavorites(): Flow<List<ChannelEntity>>
+    suspend fun importPlaylist(playlistName: String, playlistUrl: String): Result<Unit>
+    suspend fun setFavorite(channelId: Long, isFavorite: Boolean)
 }
